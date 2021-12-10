@@ -30,6 +30,8 @@ Host citc-eessi-hackathon
 
 ### Node types
 
+https://aws.amazon.com/ec2/instance-types
+
 (see also output of ``list_nodes`` command)
 
 * ``x86_64``:
