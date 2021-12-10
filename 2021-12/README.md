@@ -7,3 +7,7 @@ Notes for 1st EESSI hackathon (13-17 Dec 2021): https://hackmd.io/1X0-f5_sQU61Sp
 * [GPU support](05_gpu)
 * [EESSI test suite](06_test_suite)
 * [Exporting EESSI to a tarball and/or container image](16_export_software_stack)
+
+### Infrastructure
+
+* [Cluster-in-the-Cloud on AWS](citc)
