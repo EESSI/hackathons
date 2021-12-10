@@ -3,11 +3,10 @@
 # and rerun `run-packer`
 # If you need root permissions for any commands, use sudo
 
-set -eu
-
 sudo dnf config-manager --set-enabled powertools
 sudo dnf install -y epel-release vim python38 python38-pip Lmod which git gcc-c++ make patch file bzip2 unzip tar xz openssl openssl-devel rdma-core-devel glibc-static
-sudo dnf remove environment-modules
+rpm -qa | grep environment-modules; if [[ $? -eq 0 ]]; then sudo dnf remove environment-modules; fi
+sudo dnf install singularity
 sudo pip3 install archspec
 
 # install CernVM-FS (see https://cernvm.cern.ch/fs)
