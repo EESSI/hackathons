@@ -3,14 +3,15 @@
 Created with [Magic Castle](https://github.com/ComputeCanada/magic_castle).
 
 Fast interconnect cluster is on AWS (using EFA, AVX512 arch):
-    Sign up:  https://mokey.eessi.learnhpc.eu/auth/signup  
-    Manage ssh keys:  https://mokey.eessi.learnhpc.eu/sshpubkey
-    Address (ssh or https):  [``eessi.learnhpc.eu``](eessi.learnhpc.eu)
+* Sign up:  https://mokey.eessi.learnhpc.eu/auth/signup  
+* Manage ssh keys:  https://mokey.eessi.learnhpc.eu/sshpubkey
+* Address (ssh or https):  [``eessi.learnhpc.eu``](eessi.learnhpc.eu)
 
-GPU enabled cluster (V100 GPU, AMD EPYC)
-    Sign up:  https://mokey.eessi-gpu.learnhpc.eu/auth/signup  
-    Manage ssh keys:  https://mokey.eessi-gpu.learnhpc.eu/sshpubkey
-    Address (ssh or https):  [``eessi-gpu.learnhpc.eu``](eessi-gpu.learnhpc.eu)
+GPU enabled cluster (V100 GPU, AMD EPYC):
+
+* Sign up:  https://mokey.eessi-gpu.learnhpc.eu/auth/signup  
+* Manage ssh keys:  https://mokey.eessi-gpu.learnhpc.eu/sshpubkey
+* Address (ssh or https):  [``eessi-gpu.learnhpc.eu``](eessi-gpu.learnhpc.eu)
 
 ### Access
 
