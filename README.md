@@ -45,5 +45,5 @@ Then commit and push your stuff:
 cd 2021-12/02_software_on_top
 git add stuff.txt script.sh
 git commit -m "update for my stuff"
-git push origin main
+git push origin 02_software_on_top
 ```
