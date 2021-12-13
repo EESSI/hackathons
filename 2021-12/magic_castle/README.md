@@ -43,7 +43,7 @@ cvmfs2               4.0G  102M  4.0G   3% /cvmfs/pilot.eessi-hpc.org
 10.0.0.168:/home      10G  104M  9.9G   2% /home
 10.0.0.168:/project   50G  390M   50G   1% /project
 10.0.0.168:/scratch   50G  390M   50G   1% /scratch```
-
+```
 
 ### Slurm
 
