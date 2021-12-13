@@ -27,16 +27,22 @@ git clone git@github.com:EESSI/hackathons.git
 cd hackathons
 ```
 
-To push updates, first pull down the latest changes:
+Check out the branch for the task you're working on. For example:
 
 ```
-git pull origin main
+git checkout 02_software_on_top
+```
+
+To push updates, first pull down the latest changes for the branch you're working on:
+
+```
+git pull origin 02_software_on_top
 ```
 
 Then commit and push your stuff:
 
 ```
-cd 2021-12/00_example
+cd 2021-12/02_software_on_top
 git add stuff.txt script.sh
 git commit -m "update for my stuff"
 git push origin main
