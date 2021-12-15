@@ -10,15 +10,34 @@
 # 09/11/2021: some tidy up
 # 18/11/2021: Singularity container to EB 4.4.2 upgraded
 # 23/11/2021: Installation path changed to /apps/easybuild
+# 15/12/2021: Including a site specific site-config enfironment file which
+#             contains all the configurable variables, so we got one place
+#             to rule them all.
+#             We also hand over the full path where to find the EasyStack file 
+#             for example. This is also where any output files will go to. 
+#             The WORKINGDIR comes from the GitHub app and will change for each 
+#             run
 
-# Some defaults
+
 # Where is the script located?
-BASEDIR=$(dirname "$0")
+#BASEDIR=$(dirname "$0")
+BASEDIR=$PWD
+
+# Some defaults which we get from the site-config environment file
+source ${BASEDIR}/site-config
+
+# We need to know the path where to find the EasyStack file for example. 
+if [ -s "$1" -a -d "$1" ]; then
+	WORKINGDIR="$1"
+else
+	echo "The ${WORKINGDIR} does not appear to be a directory!"
+	echo "Bombing out!"
+	exit 2
+fi
 
 # We need to know which architecture we are running on.
 # This is right now a bit of a hack
 # ARCH=$(cd /users/hpcbuild/build/tox/black && ./bin/python3 ./bin/eessi_software_subdir.py | awk -F"/" '{print $2"/"$3}')
-ARCH=test
 
 # We need to set the right paths first.
 # We do that via variables up here:
@@ -29,12 +48,12 @@ SOFTWARE_HOME="${SOFTWARE_INSTDIR}/${ARCH}"
 # Which container name to be used:
 CONTAINER_VERSION="eb-4.4.2-Lmod-ubuntu20-LTR-3.8.4.sif"
 # Which EasyBuild version to be used for the software installation:
-EB_VERSION="4.5.1"
+# EB_VERSION="4.5.1" # this comes from the site-config file
 # Where is the list of the software to be installed:
 # The first one is for a list of EasyConfig files
 SW_NAME="softwarelist.txt"
 # This one is for an EasyStack file in yaml format:
-SW_YAML="softwarelist.yaml"
+SW_YAML=${WORKINGDIR}/"softwarelist.yaml"
 # We might need to bind an additional external directory into the container:
 BINDDIR="/mnt/shared/home/sassy-crick/software:/software"
 
@@ -47,8 +66,9 @@ OVERLAY_WORKDIR="${OVERLAY_BASEDIR}/work"
 OVERLAY_MOUNTPOINT="/apps/easybuild"
 CONTAINER_DIR="${SOFTWARE_INSTDIR}/containers"
 CONTAINER="${CONTAINER_DIR}/${CONTAINER_VERSION}"
-SCRIPTS_DIR="${OVERLAY_BASEDIR}/scripts"
+SCRIPTS_DIR="${WORKINGDIR}/scripts"
 SOFTWARE="${SCRIPTS_DIR}/software.sh"
+LOG_DIR="${WORKINGDIR}/logs"
 #########################################################################################
 
 echo "Installation started at $(date)"
@@ -73,21 +93,28 @@ if [ ! -f ${CONTAINER} ]; then
 	exit 2
 fi
 
-# We create the software.sh file on the fly in the right place. Any previous version will be removed.
 # We need to export these variables so we can modify the template for the software to be installed
+export EASYBUILD_SOURCEPATH
+export EASYBUILD_INSTALLPATH
+export CORES
+export MODULEPATH
 export EB_VERSION
 # export SW_LIST # we do this further down!
 export SW_YAML
-rm -f ${SOFTWARE} ${SCRIPT_DIR}/${SW_YAML}
-envsubst '${EB_VERSION}' < ${BASEDIR}/software-head.tmpl > ${SOFTWARE} 
+
+# We make a scripts and log directory in the working-directory, as that one is unique to all builds.
+mkdir -p ${SCRIPTS_DIR} ${LOG_DIR}
+
+# We create the software.sh file on the fly in the right place. Any previous version will be removed.
+envsubst '${EASYBUILD_SOURCEPATH},${EASYBUILD_INSTALLPATH},${CORES},${MODULEPATH},${EB_VERSION}' < ${BASEDIR}/software-head.tmpl > ${SOFTWARE} 
 if [ -s ${BASEDIR}/${SW_NAME} ]; then
         SW_LIST=$(cat ${SW_NAME})
         export SW_LIST
         envsubst '${SW_LIST}' < ${BASEDIR}/software-list.tmpl >> ${SOFTWARE} 
 fi
-if [ -s ${SW_YAML} ]; then
+if [ -n ${SW_YAML} ]; then
         envsubst '${SW_YAML}' < ${BASEDIR}/software-yaml.tmpl >> ${SOFTWARE} 
-        cp -f ${BASEDIR}/${SW_YAML} ${SCRIPTS_DIR}
+        cp -f ${SW_YAML} ${SCRIPTS_DIR}
 fi
 cat ${BASEDIR}/software-bottom.tmpl >> ${SOFTWARE}
 chmod a+x ${SOFTWARE}
