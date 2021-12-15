@@ -17,7 +17,7 @@ sudo dnf install -y cvmfs
 # install latest CernVM-FS configuration for EESSI (see https://github.com/EESSI/filesystem-layer#clients)
 sudo dnf install -y https://github.com/EESSI/filesystem-layer/releases/download/latest/cvmfs-config-eessi-latest.noarch.rpm
 
-# configure CernVM-FS (no proxy, 10GB quota for CernVM-FS cache)
+# configure CernVM-FS (no proxy, 100GB quota for CernVM-FS cache)
 sudo bash -c "echo 'CVMFS_HTTP_PROXY=DIRECT' > /etc/cvmfs/default.local"
-sudo bash -c "echo 'CVMFS_QUOTA_LIMIT=10000' >> /etc/cvmfs/default.local"
+sudo bash -c "echo 'CVMFS_QUOTA_LIMIT=100000' >> /etc/cvmfs/default.local"
 sudo cvmfs_config setup

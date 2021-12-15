@@ -27,6 +27,10 @@ Host citc-eessi-hackathon
 
 (change `boegel` and the `IdentityFile` path)
 
+### Login node
+
+**The login node has limited resources, and the EESSI pilot repository is not mounted there!**
+Please start an interactive session on a workernode, or submit job scripts.
 
 ### Node types
 
