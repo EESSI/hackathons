@@ -6,6 +6,14 @@
 source /cvmfs/pilot.eessi-hpc.org/latest/init/minimal_eessi_env
 
 ##############################################################################################
+# Check that the CUDA driver version is adequate
+# (
+#  needs to be r450 or r470 which are LTS, other production branches are acceptable but not
+#  recommended, below r450 is not compatible [with an exception we will not explore,see
+#  https://docs.nvidia.com/datacenter/tesla/drivers/#cuda-drivers]
+# )
+
+
 # Check if the CUDA compat libraries are installed and compatible with the target CUDA version
 # if not find the latest version of the compatibility libraries and install them
 
