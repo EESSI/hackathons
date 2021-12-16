@@ -56,7 +56,8 @@ ln -s /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia/latest/compat /cvmfs/pil
 
 ###############################################################################################
 # Install CUDA
-# - we do not build the module (it already exists in EESSI), only install the package in the right location
+# - as an installation location just use $EESSI_SOFTWARE_PATH but replacing `versions` with `host_injections`
+#   (CUDA is a binary installation so no need to worry too much about this)
 
 # Test building something with CUDA and running
 
