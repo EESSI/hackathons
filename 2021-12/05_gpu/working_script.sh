@@ -1,4 +1,5 @@
 # This has no protections, just a proof of concept for Magic Castle
+
 # Make space for compat libraries
 mkdir -p /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia
 cd /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia
