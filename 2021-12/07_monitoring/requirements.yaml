@@ -9,3 +9,6 @@ roles:
   - name: cloudalchemy.grafana
     src: https://github.com/cloudalchemy/ansible-grafana
     version: 0.17.0
+  - name: eessi.cvmfs_exporter
+    src: https://github.com/terjekv/ansible-cvmfs-prometheus-exporter
+    version: develop
