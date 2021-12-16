@@ -7,10 +7,14 @@
 # the installation script. 
 
 # Variables SLURM concerning
-
 CONSTRAINT="c4.2xlarge"
-CORES=8
-ARCH=haswell
+CORES="8"
+ARCH="haswell"
+
+# This is for the overall build process log files, not the individual builds!
+# Currently not being used
+LOGFILES="/mnt/shared/home/sassy-crick/testbuild/logs"
+
 
 # Variables EasyBuild concerning:
 # Some variables need to come from SLURM above!

@@ -1,7 +1,5 @@
 software:
-  EasyBuild:
+  bzip2:
     toolchains:
       SYSTEM:
-        versions: [4.3.1]
-
-
+        versions: [1.0.6]

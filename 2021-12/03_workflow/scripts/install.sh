@@ -51,9 +51,9 @@ CONTAINER_VERSION="eb-4.4.2-Lmod-ubuntu20-LTR-3.8.4.sif"
 # EB_VERSION="4.5.1" # this comes from the site-config file
 # Where is the list of the software to be installed:
 # The first one is for a list of EasyConfig files
-SW_NAME="softwarelist.txt"
+SW_NAME="${WORKINGDIR}/softwarelist.txt"
 # This one is for an EasyStack file in yaml format:
-SW_YAML=${WORKINGDIR}/"softwarelist.yaml"
+SW_YAML="${WORKINGDIR}/softwarelist.yaml"
 # We might need to bind an additional external directory into the container:
 BINDDIR="/mnt/shared/home/sassy-crick/software:/software"
 
@@ -107,12 +107,12 @@ mkdir -p ${SCRIPTS_DIR} ${LOG_DIR}
 
 # We create the software.sh file on the fly in the right place. Any previous version will be removed.
 envsubst '${EASYBUILD_SOURCEPATH},${EASYBUILD_INSTALLPATH},${CORES},${MODULEPATH},${EB_VERSION}' < ${BASEDIR}/software-head.tmpl > ${SOFTWARE} 
-if [ -s ${BASEDIR}/${SW_NAME} ]; then
+if [ -s ${SW_NAME} ]; then
         SW_LIST=$(cat ${SW_NAME})
         export SW_LIST
         envsubst '${SW_LIST}' < ${BASEDIR}/software-list.tmpl >> ${SOFTWARE} 
 fi
-if [ -n ${SW_YAML} ]; then
+if [ -s ${SW_YAML} ]; then
         envsubst '${SW_YAML}' < ${BASEDIR}/software-yaml.tmpl >> ${SOFTWARE} 
         cp -f ${SW_YAML} ${SCRIPTS_DIR}
 fi
