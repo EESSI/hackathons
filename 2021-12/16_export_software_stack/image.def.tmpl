@@ -1,0 +1,31 @@
+Bootstrap: library
+From: centos:8.4
+
+%files
+    ./TARBALL /
+
+%post
+    yum -y install tar vi
+    tar zxf /TARBALL -C /
+    echo "export `grep ^PS1 /env`" >> $SINGULARITY_ENVIRONMENT
+    echo "export `grep ^PATH /env`" >> $SINGULARITY_ENVIRONMENT
+    echo "export `grep ^PKG_CONFIG_PATH /env`" >> $SINGULARITY_ENVIRONMENT
+    echo "export `grep ^MANPATH /env`" >> $SINGULARITY_ENVIRONMENT
+    echo "export `grep ^MODULEPATH /env`" >> $SINGULARITY_ENVIRONMENT
+    echo "export `grep ^MODULESHOME /env`" >> $SINGULARITY_ENVIRONMENT
+    echo "export `grep ^LIB /env`" >> $SINGULARITY_ENVIRONMENT
+    echo "export `grep ^XDG_DATA_DIRS /env`" >> $SINGULARITY_ENVIRONMENT
+    echo "export `grep ^_LMFILES_ /env`" >> $SINGULARITY_ENVIRONMENT
+    grep LMOD_ /env | grep -v BASH | while read l; do echo "export $l" >> $SINGULARITY_ENVIRONMENT ; done
+    grep _ModuleTable /env | while read l; do echo "export $l" >> $SINGULARITY_ENVIRONMENT ; done
+    echo "export `grep ^LOADED /env`" >> $SINGULARITY_ENVIRONMENT
+    grep ^EESSI /env | while read l; do echo "export $l" >> $SINGULARITY_ENVIRONMENT ; done
+    grep ^EB /env | while read l; do echo "export $l" >> $SINGULARITY_ENVIRONMENT ; done
+    grep ^CMAKE /env | while read l; do echo "export $l" >> $SINGULARITY_ENVIRONMENT ; done
+    echo -e 'BASH_FUNC_module%%=() {  eval $($LMOD_CMD bash "$@") && eval $(${LMOD_SETTARG_CMD:-:} -s sh) \n}' >> $SINGULARITY_ENVIRONMENT
+    echo -e 'BASH_FUNC_ml%%=() {  eval $($LMOD_DIR/ml_cmd "$@") \n}'  >> $SINGULARITY_ENVIRONMENT
+    
+
+%labels
+    Author jurij.pecar@embl.de
+    Version v0.0.1
