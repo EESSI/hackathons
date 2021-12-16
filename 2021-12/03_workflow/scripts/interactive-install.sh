@@ -10,13 +10,30 @@
 # 09/11/2021: some tidy up
 # 18/11/2021: Singularity container to EB 4.4.2 upgraded
 # 23/11/2021: Installation path changed to /apps/easybuild
+# 15/12/2021: Including a site specific site-config enfironment file which
+#             contains all the configurable variables, so we got one place
+#             to rule them all.
+#             We also hand over the full path where to find the EasyStack file 
+#             for example. This is also where any output files will go to. 
+#             The WORKINGDIR comes from the GitHub app and will change for each 
+#             run
 
-# Some defaults
 
-# We need to know which architecture we are running on.
-# This is right now a bit of a hack
-# ARCH=$(cd /users/hpcbuild/build/tox/black && ./bin/python3 ./bin/eessi_software_subdir.py | awk -F"/" '{print $2"/"$3}')
-ARCH=test
+# Where is the script located?
+#BASEDIR=$(dirname "$0")
+BASEDIR=$PWD
+
+# Some defaults which we get from the site-config environment file
+source ${BASEDIR}/site-config
+
+# We need to know the path where to find the EasyStack file for example. 
+if [ -s "$1" -a -d "$1" ]; then
+        WORKINGDIR="$1"
+else
+        echo "The ${WORKINGDIR} does not appear to be a directory!"
+        echo "Bombing out!"
+        exit 2
+fi
 
 # We need to set the right paths first.
 # We do that via variables up here:
@@ -25,12 +42,16 @@ ARCH=test
 SOFTWARE_INSTDIR="/mnt/shared/home/sassy-crick/software"
 SOFTWARE_HOME="${SOFTWARE_INSTDIR}/${ARCH}"
 # Which container name to be used:
-CONTAINER_VERSION="eb-4.4.2-Lmod-ubuntu20-LTR-3.8.4.sif"
+CONTAINER_VERSION="eb-4.5.0-Lmod-rocky8-3.8.4.sif"
 # Which EasyBuild version to be used for the software installation:
-EB_VERSION="4.5.1"
+# EB_VERSION="4.5.1" # this comes from the site-config file
+# Where is the list of the software to be installed:
+# The first one is for a list of EasyConfig files
+SW_NAME="${WORKINGDIR}/softwarelist.txt"
+# This one is for an EasyStack file in yaml format:
+SW_YAML="${WORKINGDIR}/softwarelist.yaml"
 # We might need to bind an additional external directory into the container:
 BINDDIR="/mnt/shared/home/sassy-crick/software:/software"
-# SOURCEDIR="/mnt/shared/home/sassy-crick/software:/apps/easybuild/sources"
 
 #########################################################################################
 # These should not need to be touched

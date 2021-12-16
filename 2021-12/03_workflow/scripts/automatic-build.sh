@@ -34,7 +34,13 @@ cat <<EOF> ${WORKINGDIR}/scripts/${ARCH}-submission.sh
 #SBATCH -o ${WORKINGDIR}/logs/%j-${ARCH}.out 
 
 # Now we run the job:
-${BASEDIR}/install.sh ${WORKINGDIR}
+${BASEDIR}/install.sh ${WORKINGDIR} 
+if [ $? -eq 0 ]; then
+	echo "We are testing the installed software on a different container"
+	${BASEDIR}/testing.sh ${WORKINGDIR} 
+else
+	echo "There was a problem with the installation!"
+fi
 
 EOF
 

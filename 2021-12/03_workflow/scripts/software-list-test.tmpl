@@ -1,0 +1,10 @@
+# testing stuff
+eb --sanity-check-only ${SW_LIST} &> /dev/shm/${SLURM_JOBID}-testing.log 
+if [ $? -gt 0 ]; then
+        echo "FAILURE"
+        cat /dev/shm/${SLURM_JOBID}-testing.log 
+        cp -f /dev/shm/${SLURM_JOBID}-testing.log ${WORKINGDIR}/logs
+else
+        echo "PASS"
+fi
+
