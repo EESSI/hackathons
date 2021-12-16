@@ -1,0 +1,2 @@
+[cvmfsstratum1servers]
+3.70.228.34 ansible_ssh_user=eessi

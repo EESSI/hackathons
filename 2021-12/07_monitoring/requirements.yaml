@@ -1,0 +1,11 @@
+---
+roles:
+  - name: cloudalchemy.prometheus
+    src: https://github.com/cloudalchemy/ansible-prometheus
+    version: 4.0.0
+  - name: cloudalchemy.node_exporter
+    src: https://github.com/cloudalchemy/ansible-node-exporter
+    version: 2.0.0
+  - name: cloudalchemy.grafana
+    src: https://github.com/cloudalchemy/ansible-grafana
+    version: 0.17.0
