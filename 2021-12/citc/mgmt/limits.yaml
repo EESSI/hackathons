@@ -1,7 +1,7 @@
-c4.2xlarge: 1  # Intel Haswell, 8 cores, 15GB RAM, EBS
-c5a.2xlarge: 1  # AMD EPYC, 8 cores, 16GB RAM, EBS
-c5.2xlarge: 1  # Intel Xeon (Skylake or Cascade Lake), 8 cores, 16GB RAM, EBS
-c5d.2xlarge: 1  # Intel Xeon (Skylake or Cascade Lake), 8 cores, 16GB RAM, SSD
-c6i.2xlarge: 1  # Intel Xeon 3rd gen (Ice Lake?), 8 cores, 16GB RAM, EBS
-c6g.2xlarge: 1  # Arm Graviton 2, 8 cores, 16GB RAM, EBS
-c6gd.2xlarge: 1  # Arm Graviton 2, 8 cores, 16GB RAM, SSD
+c4.2xlarge: 5  # Intel Haswell, 8 cores, 15GB RAM, EBS
+c5a.2xlarge: 5  # AMD EPYC, 8 cores, 16GB RAM, EBS
+c5.2xlarge: 5  # Intel Xeon (Skylake or Cascade Lake), 8 cores, 16GB RAM, EBS
+c5d.2xlarge: 5  # Intel Xeon (Skylake or Cascade Lake), 8 cores, 16GB RAM, SSD
+c6i.2xlarge: 5  # Intel Xeon 3rd gen (Ice Lake?), 8 cores, 16GB RAM, EBS
+c6g.2xlarge: 5  # Arm Graviton 2, 8 cores, 16GB RAM, EBS
+c6gd.2xlarge: 5  # Arm Graviton 2, 8 cores, 16GB RAM, SSD
