@@ -25,7 +25,7 @@ easybuild_prefix="${EASYBUILD_PREFIX:-${default_eessi_host_easybuild_prefix}}"
 mkdir -p /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia
 cd /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia
 
-# TODO: Add a check to ensure there is enough space in the installation directory to host the installation
+# TODO: Add a check to ensure there is enough (writable!) space in the installation directory to host the installation
 # For sources, build and install you will need ~16GB available
 available_space=$(df -P $(realpath /cvmfs/pilot.eessi-hpc.org/host_injections) | tail -1 | awk '{print $4}')
 
