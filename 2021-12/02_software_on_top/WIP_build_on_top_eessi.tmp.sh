@@ -24,7 +24,10 @@ ml EasyBuild
 eb_version=eb --version | cut -f 4 -d ' '
 
 # Changes in EasyBuild configuration to install in the proper arch
-export EASYBUILD_INSTALLPATH="/cvmfs/pilot.eessi-hpc.org/2021.06/software/$ARCH"
+#export EASYBUILD_INSTALLPATH="/cvmfs/pilot.eessi-hpc.org/2021.06/software/$ARCH"
 export EASYBUILD_ROBOT="$MYREPO_NAME"
+export EASYBUILD_SYSROOT=GENTOPREFIX_path 
 
-
+# Find the recipe to be installed
+EB_LIST=(${`find $MYREPO_NAME -name "*eb"`// /})
+B=(${EB_TEST// / })
