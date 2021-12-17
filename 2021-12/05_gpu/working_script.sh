@@ -27,6 +27,7 @@ cd /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia
 
 # TODO: Add a check to ensure there is enough space in the installation directory to host the installation
 # For sources, build and install you will need ~16GB available
+available_space=$(df -P $(realpath /cvmfs/pilot.eessi-hpc.org/host_injections) | tail -1 | awk '{print $4}')
 
 # Install compat libraries
 if [ ! -f $cuda_compat_libs ]; then
