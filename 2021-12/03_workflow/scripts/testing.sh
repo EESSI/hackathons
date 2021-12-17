@@ -79,6 +79,7 @@ export EB_VERSION
 # export SW_LIST # we do this further down!
 export SW_YAML
 export WORKINGDIR
+export ARCH
 
 # We make a scripts and log directory in the working-directory, as that one is unique to all builds.
 mkdir -p ${SCRIPTS_DIR} ${LOG_DIR}
@@ -94,8 +95,9 @@ if [ -s ${SW_YAML} ]; then
         envsubst '${SW_YAML},${WORKINGDIR}' < ${BASEDIR}/software-yaml-test.tmpl >> ${SOFTWARE} 
         cp -f ${SW_YAML} ${SCRIPTS_DIR}
 fi
-# Do we need that? 
-# cat ${BASEDIR}/software-bottom.tmpl >> ${SOFTWARE}
+# IF the above was successfull, we will build the tarball and the sha256sum file 
+envsubst '${ARCH}' < ${BASEDIR}/software-bottom-test.tmpl >> ${SOFTWARE}
+
 chmod a+x ${SOFTWARE}
 
 # We check if we already have an EasyBuild module file.
