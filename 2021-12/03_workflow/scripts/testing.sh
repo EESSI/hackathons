@@ -24,7 +24,7 @@ fi
 # We do that via variables up here:
 # These are the only bits which need to be modified:
 # Where to install the software:
-SOFTWARE_INSTDIR="/mnt/shared/home/sassy-crick/software"
+SOFTWARE_INSTDIR="/mnt/shared/home/eessi-bot/software"
 SOFTWARE_HOME="${SOFTWARE_INSTDIR}/${ARCH}"
 # Which container name to be used:
 CONTAINER_VERSION="eb-4.5.0-Lmod-rocky8-3.8.4.sif"
@@ -36,7 +36,7 @@ SW_NAME="${WORKINGDIR}/softwarelist.txt"
 # This one is for an EasyStack file in yaml format:
 SW_YAML="${WORKINGDIR}/softwarelist.yaml"
 # We might need to bind an additional external directory into the container:
-BINDDIR="/mnt/shared/home/sassy-crick/software:/software"
+BINDDIR="/mnt/shared/home/eessi-bot/software:/software"
 
 #########################################################################################
 # These should not need to be touched
