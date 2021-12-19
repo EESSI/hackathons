@@ -3,6 +3,13 @@
 # and rerun `run-packer`
 # If you need root permissions for any commands, use sudo
 
+tmpdir=$(mktemp -d)
+cd $tmpdir
+curl -OL https://raw.githubusercontent.com/rocky-linux/rocky-tools/a208a1c/migrate2rocky/migrate2rocky.sh
+chmod u+x migrate2rocky.sh
+sudo ./migrate2rocky.sh -r
+cd -
+
 sudo dnf config-manager --set-enabled powertools
 sudo dnf install -y epel-release vim python38 python38-pip Lmod which git gcc-c++ make patch file bzip2 unzip tar xz openssl openssl-devel rdma-core-devel glibc-static
 rpm -qa | grep environment-modules; if [[ $? -eq 0 ]]; then sudo dnf remove environment-modules; fi
