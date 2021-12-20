@@ -5,7 +5,7 @@
 
 tmpdir=$(mktemp -d)
 cd $tmpdir
-curl -OL https://raw.githubusercontent.com/rocky-linux/rocky-tools/a208a1c/migrate2rocky/migrate2rocky.sh
+curl -OL https://raw.githubusercontent.com/rocky-linux/rocky-tools/68c77ad/migrate2rocky/migrate2rocky.sh
 chmod u+x migrate2rocky.sh
 sudo ./migrate2rocky.sh -r
 cd -
