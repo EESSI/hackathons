@@ -12,3 +12,5 @@ roles:
   - name: eessi.cvmfs_exporter
     src: https://github.com/terjekv/ansible-cvmfs-prometheus-exporter
     version: develop
+  - name: eessi.roles
+    src: https://github.com/terjekv/ansible-eessi-roles

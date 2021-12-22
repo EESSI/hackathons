@@ -1,10 +1,12 @@
 ---
-- hosts: all
+- hosts: stratum1
   roles:
-  - cloudalchemy.prometheus
-  - cloudalchemy.node_exporter
-  - cloudalchemy.grafana
+  - eessi.roles/roles/stratum1
+#  - cloudalchemy.prometheus
+#  - cloudalchemy.node_exporter
+#  - cloudalchemy.grafana
   - eessi.cvmfs_exporter
+
   vars:
 
     prometheus_web_listen_address: "127.0.0.1:9090"
@@ -39,6 +41,7 @@
         basicAuth: false
 
     grafana_dashboards:
+      # 1860 has issues, needs testing
       - dashboard_id: 13978
         revision_id: 1
         datasource: prometheus

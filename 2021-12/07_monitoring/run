@@ -1,0 +1,8 @@
+#!/bin/bash
+
+rm -rf ~/.ansible/roles/eessi.roles/roles ~/.ansible/roles/eessi.cvmfs_exporter
+mkdir ~/.ansible/roles/eessi.roles/roles ~/.ansible/roles/eessi.cvmfs_exporter
+cp -a ~/projects/eessi/ansible-eessi-roles/* ~/.ansible/roles/eessi.roles
+cp -a ~/projects/eessi/ansible-cvmfs-prometheus-exporter/* ~/.ansible/roles/eessi.cvmfs_exporter/
+
+OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES ansible-playbook -i environments/dev/hosts -b deploy.yaml
