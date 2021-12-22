@@ -2,46 +2,18 @@
 - hosts: stratum1
   roles:
   - eessi.roles/roles/stratum1
-#  - cloudalchemy.prometheus
-#  - cloudalchemy.node_exporter
-#  - cloudalchemy.grafana
-  - eessi.cvmfs_exporter
 
   vars:
+    eessi_monitoring: true
+#    eessi_grafana_password: "test"
 
-    prometheus_web_listen_address: "127.0.0.1:9090"
-    prometheus_targets:
-      node:
-      - targets:
-        # Node exporter
-        - localhost:9100
-        # CVMFS exporter
-        - localhost:9101
-        labels:
-          env: Stratum1 {{ inventory_hostname }}
-
-    prometheus_scrape_configs:
-      - job_name: "node"
-        file_sd_configs:
-          - files:
-              - "{{ prometheus_config_dir }}/file_sd/node.yml" # This line loads file created from `prometheus_targets`
-
-    node_exporter_web_listen_address: "127.0.0.1:9100"
-
-    grafana_address: 127.0.0.1
-    grafana_security:
-      admin_user: admin
-      admin_password: eessi
-
-    grafana_datasources:
-      - name: prometheus
-        type: prometheus
-        access: proxy
-        url: 'http://localhost:9090'
-        basicAuth: false
-
-    grafana_dashboards:
-      # 1860 has issues, needs testing
-      - dashboard_id: 13978
-        revision_id: 1
-        datasource: prometheus
+    local_cvmfs_repositories:
+      - repository: ci.eessi-hpc.org
+        stratum0: rug-nl.stratum0.cvmfs.eessi-infra.org
+        owner: "{{ cvmfs_repo_owner | default('root') }}"
+        key_dir: /etc/cvmfs/keys/eessi-hpc.org
+        server_options:
+          - CVMFS_AUTO_GC=false
+          - CVMFS_GARBAGE_COLLECTION=true
+        client_options: []
+        use_for_ci: yes
