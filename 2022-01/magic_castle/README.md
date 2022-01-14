@@ -2,7 +2,7 @@
 
 Created with [Magic Castle](https://github.com/ComputeCanada/magic_castle).
 
-Fast interconnect cluster is on Azure (IB, aVX512 arch) and AWS (using EFA, AVX512 arch):
+Fast interconnect cluster is on Azure (IB, AVX512 arch) and AWS (using EFA, AVX512 arch):
 * Sign up:
   * https://mokey.eessii-azure.learnhpc.eu/auth/signup
   * https://mokey.eessii-aws.learnhpc.eu/auth/signup  
