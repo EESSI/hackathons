@@ -1,0 +1,20 @@
+export PATH=$HOME/easybuild/easybuild-framework:$PATH
+export PYTHONPATH=$HOME/easybuild/easybuild-framework:$HOME/easybuild/easybuild-easyblocks:$HOME/easybuild/easybuild-easyconfigs
+
+export EASYBUILD_PREFIX=$HOME
+export EASYBUILD_BUILDPATH=/tmp/$USER
+export EASYBUILD_TRACE=1
+export EASYBUILD_DEBUG=1
+export EASYBUILD_ZIP_LOGS=bzip2
+export EASYBUILD_JOB_BACKEND=Slurm
+export EASYBUILD_IGNORE_OSDEPS=1
+
+export EASYBUILD_GITHUB_USER=boegel
+
+export EASYBUILD_ACCEPT_EULA_FOR='.*'
+
+source `ls /usr/share/lmod/*/init/bash | tail -1`
+
+module use $HOME/modules/all
+
+alias q='squeue -o "%.18i %.9P %.50j %.8u %.8T %.10M %.9l %.6D %.6C %.17R %m"'
