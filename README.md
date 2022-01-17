@@ -3,6 +3,7 @@ This repository contains scripts, notes, etc. related to EESSI hackathons.
 ### Hackathons
 
 * [1st EESSI hackathon: 13-17 Dec 2021](2021-12)
+* [2nd EESSI hackathon: 17-21 Jan 2022](2022-01)
 
 ### Access
 
@@ -45,5 +46,5 @@ Then commit and push your stuff:
 cd 2021-12/02_software_on_top
 git add stuff.txt script.sh
 git commit -m "update for my stuff"
-git push origin main
+git push origin 02_software_on_top
 ```

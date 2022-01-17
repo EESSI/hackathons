@@ -11,3 +11,4 @@ Notes for 1st EESSI hackathon (13-17 Dec 2021): https://hackmd.io/1X0-f5_sQU61Sp
 ### Infrastructure
 
 * [Cluster-in-the-Cloud on AWS](citc)
+* [Magic Castle in AWS + FENIX](magic_castle)
