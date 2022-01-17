@@ -1,3 +1,3 @@
-# EESSI hackathon Dec'21 - GPU support
+# EESSI hackathon Jan'22 - GPU support
 
-Notes: https://hackmd.io/BlYsQIrWRheSILpyt6m8Mg
+Notes: https://hackmd.io/47FAwaeWRi66tdiqjy2Zvg
