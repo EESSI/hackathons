@@ -1,0 +1,2 @@
+#!/bin/bash
+eb --search 'GCC-[891].*eb|GCCcore-[891].*eb' | sed 's@.*/@@g' | egrep -v '^icc|^ifort|^impi|^PGI|CUDA|^CRF|^FastME|^SpaceRanger|iccifort|^CNT-ILP|MATLAB|annovar|CUDA|cuda|^CPLEX|^GeneMark-ET|^MotionCor2|^gSOAP|^nauty|^socat|^davix|^Normaliz|^g2log|^Sailfish|^FuSeq|netMHCIIpan|^PEAR|^GBprocesS|^HDF-EOS|^h4toh5|^Hadoop|^Molden|^Gaia-2.4.5-GCCcore-8.2.0|^Qt-4.8.7|^PyQt5|^QtPy-|^QScintilla' | tr '\n' ' '
