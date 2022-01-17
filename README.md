@@ -3,6 +3,7 @@ This repository contains scripts, notes, etc. related to EESSI hackathons.
 ### Hackathons
 
 * [1st EESSI hackathon: 13-17 Dec 2021](2021-12)
+* [2nd EESSI hackathon: 17-21 Jan 2022](2022-01)
 
 ### Access
 
