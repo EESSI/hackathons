@@ -4,10 +4,10 @@ Created with [Magic Castle](https://github.com/ComputeCanada/magic_castle).
 
 Fast interconnect cluster is on Azure (IB, AVX512 arch) and AWS (using EFA, AVX512 arch):
 * Sign up:
-  * https://mokey.eessii-azure.learnhpc.eu/auth/signup
-  * https://mokey.eessii-aws.learnhpc.eu/auth/signup  
+  * https://mokey.eessi-azure.learnhpc.eu/auth/signup
+  * https://mokey.eessi-aws.learnhpc.eu/auth/signup  
 * Manage ssh keys:
-  * https://mokey.eessii-azure.learnhpc.eu/sshpubkey
+  * https://mokey.eessi-azure.learnhpc.eu/sshpubkey
   * https://mokey.eessi-aws.learnhpc.eu/sshpubkey
 * Address (ssh or https):
   * [``eessi-azure.learnhpc.eu``](eessi-azure.learnhpc.eu)
