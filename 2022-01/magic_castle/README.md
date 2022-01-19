@@ -20,7 +20,7 @@ GPU enabled cluster (V100 GPU, AMD EPYC):
 
 * Sign up:  https://mokey.eessi-gpu.learnhpc.eu/auth/signup  
 * Manage ssh keys:  https://mokey.eessi-gpu.learnhpc.eu/sshpubkey
-* Address (ssh or https):  [``eessi-gpu.learnhpc.eu``](eessi-gpu.learnhpc.eu)
+* Address (ssh or https):  ``eessi-gpu.learnhpc.eu``
 
 ### Access
 
