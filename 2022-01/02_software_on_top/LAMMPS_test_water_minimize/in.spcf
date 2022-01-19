@@ -1,0 +1,39 @@
+units      real
+dimension  3
+boundary   p p p
+atom_style full
+read_data water1000.data
+
+## alternate way to set charges - besides manually in data file ###
+group ox type 2
+group hy type 1
+set group ox charge -0.8200
+set group hy charge 0.4100
+
+pair_style lj/cut/coul/long 5.9086
+pair_coeff * * 0.0 0.0
+pair_coeff 2 2 0.1553537 3.166
+bond_style  harmonic
+bond_coeff  1 529.581 1.0120
+angle_style harmonic
+angle_coeff 1 37.95 113.24
+kspace_style ewald 1.0e-5
+
+velocity all create 298.0 12345689 dist uniform
+fix 2 all nvt temp 298.0 298.0 100.0
+
+
+neighbor 2.0 bin
+neigh_modify delay 0 every 10 check yes
+thermo      200
+thermo_style custom step time temp
+thermo_modify norm no flush yes
+
+minimize 1.0e-8 1.0e-8 10000 10000
+
+dump 1 all dcd 2000 result.dcd
+dump_modify 1 unwrap yes
+#run variables
+timestep 0.5
+run 2000 # 100ps, longer needed ( 2000000 10ns )
+
