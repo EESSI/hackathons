@@ -10,8 +10,8 @@ Fast interconnect cluster is on Azure (IB, AVX512 arch) and AWS (using EFA, AVX5
   * https://mokey.eessi-azure.learnhpc.eu/sshpubkey
   * https://mokey.eessi-aws.learnhpc.eu/sshpubkey
 * Address (ssh or https):
-  * [``eessi-azure.learnhpc.eu``](eessi-azure.learnhpc.eu)
-  * [``eessi-aws.learnhpc.eu``](eessi-aws.learnhpc.eu)
+  * ``eessi-azure.learnhpc.eu``
+  * ``eessi-aws.learnhpc.eu``
 * GPUs are also available on the AWS cluster (please contact @ocaisa if you would like to
   use these, they will only be configured on demand).
 
