@@ -5,8 +5,16 @@
 #   $EPREFIX/startprefix <<< /path/to/this_script.sh
 
 # verify existence of nvidia-smi or this is a waste of time
-# TODO: Check if nvidia-smi exists and can be executed without error
-
+# Check if nvidia-smi exists and can be executed without error
+if command -v nvidia-smi > /dev/null 2>&1; then
+  nvidia-smi > /dev/null 2>&1
+  if [ $? -ne 0 ]; then
+    echo "nvidia-smi was found but returned error code, exiting now..." >&2
+  fi
+  echo "nvidia-smi found, continue setup."
+else
+  echo "nvidia-smi not found, exiting now..." >&2
+fi
 
 # Set up the minimum EESSI environment variables
 # (this is using `latest` but we should actually be using a fixed version like $EESSI_PILOT_VERSION)
