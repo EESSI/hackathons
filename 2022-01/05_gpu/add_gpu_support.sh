@@ -20,6 +20,45 @@ fi
 # (this is using `latest` but we should actually be using a fixed version like $EESSI_PILOT_VERSION)
 source /cvmfs/pilot.eessi-hpc.org/latest/init/minimal_eessi_env
 
+# Get arch type from EESSI environment
+eessi_cpu_family="${EESSI_CPU_FAMILY:-x86_64}"
+
+# Get OS family
+# TODO: needs more thorough testing
+os_family=$(uname | tr '[:upper:]' '[:lower:]')
+
+# Get OS version
+# TODO: needs more thorough testing, taken from https://unix.stackexchange.com/a/6348
+if [ -f /etc/os-release ]; then
+  # freedesktop.org and systemd
+  . /etc/os-release
+  os=$NAME
+  ver=$VERSION_ID
+  if [[ "$os" == *"Rocky"* ]]; then
+    os="rhel"
+  fi
+elif type lsb_release >/dev/null 2>&1; then
+  # linuxbase.org
+  os=$(lsb_release -si)
+  ver=$(lsb_release -sr)
+elif [ -f /etc/lsb-release ]; then
+  # For some versions of Debian/Ubuntu without lsb_release command
+  . /etc/lsb-release
+  os=$DISTRIB_ID
+  ver=$DISTRIB_RELEASE
+elif [ -f /etc/debian_version ]; then
+  # Older Debian/Ubuntu/etc.
+  os=Debian
+  ver=$(cat /etc/debian_version)
+else
+  # Fall back to uname, e.g. "Linux <version>", also works for BSD, etc.
+  os=$(uname -s)
+  ver=$(uname -r)
+fi
+# Convert OS version to major versions, e.g. rhel8.5 -> rhel8
+# TODO: needs testing for e.g. Ubuntu 20.04
+ver=${ver%.*}
+
 ##############################################################################################
 # Check that the CUDA driver version is adequate
 # (
@@ -68,10 +107,9 @@ rm -r usr
 ln -sf cuda-11.5 latest
 
 # Create the space to host the libraries
-# TODO: Need to also use envvars for OS and arch
-mkdir -p /cvmfs/pilot.eessi-hpc.org/host_injections/${EESSI_PILOT_VERSION}/compat/linux/x86_64
+mkdir -p /cvmfs/pilot.eessi-hpc.org/host_injections/${EESSI_PILOT_VERSION}/compat/${os_family}/${eessi_cpu_family}
 # Symlink in the path to the latest libraries
-ln -s /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia/latest/compat /cvmfs/pilot.eessi-hpc.org/host_injections/${EESSI_PILOT_VERSION}/compat/linux/x86_64/lib
+ln -s /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia/latest/compat /cvmfs/pilot.eessi-hpc.org/host_injections/${EESSI_PILOT_VERSION}/compat/${os_family}/${eessi_cpu_family}/lib
 ###############################################################################################
 
 ###############################################################################################
