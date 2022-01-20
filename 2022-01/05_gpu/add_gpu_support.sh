@@ -118,6 +118,10 @@ ln -s /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia/latest/compat /cvmfs/pil
 #   (CUDA is a binary installation so no need to worry too much about this)
 # TODO: First need the symlink in EESSI
 # TODO: The install is pretty fat, you need lots of space for download/unpack/install (~3*5GB), need to do a space check before we proceed
+avail_space=$(df --output=avail /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia/ | tail -n 1 | awk '{print $1}')
+if [[ "${avail_space}" < 16000000 ]]; then
+  echo "Need more disk space to install CUDA, exiting now..."
+fi
 # TODO: Can we do a trimmed install?
 
 # Test building something with CUDA and running
