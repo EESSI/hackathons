@@ -36,9 +36,12 @@ driver_version=$(nvidia-smi --query-gpu=driver_version --format=csv,noheader)
 # if not find the latest version of the compatibility libraries and install them
 
 # Create a general space for our NVIDIA compat drivers
-mkdir -p /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia
-cd /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia
-# TODO: Do a lot better at guarding this stuff, space needs to be writable!
+if [ -w /cvmfs/pilot.eessi-hpc.org/host_injections ]; then
+  mkdir -p /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia
+  cd /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia
+else
+  echo "Cannot write to eessi host_injections space, exiting now..." >&2
+fi
 
 # Check if we have any version installed by checking for the existence of /cvmfs/pilot.eessi-hpc.org/host_injections/nvidia/latest
 
