@@ -1,0 +1,91 @@
+initializing ...
+numthread = 8
+Trace 2 in getfem_models.cc, line 4386: Mass term assembly for Dirichlet condition
+Trace 2 in getfem_models.cc, line 4386: Mass term assembly for Dirichlet condition
+Trace 2 in getfem_models.cc, line 4386: Mass term assembly for Dirichlet condition
+Trace 2 in getfem_models.cc, line 4386: Mass term assembly for Dirichlet condition
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Level 1 Warning in getfem_superlu.cc, line 217: SuperLU solve failed: info =20
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 4386: Mass term assembly for Dirichlet condition
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 4386: Mass term assembly for Dirichlet condition
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 4386: Mass term assembly for Dirichlet condition
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+Trace 2 in getfem_models.cc, line 3463: Linearized isotropic elasticity: generic matrix assembly
+Trace 2 in getfem_models.cc, line 4386: Mass term assembly for Dirichlet condition
+Trace 2 in getfem_models.cc, line 3299: Generic source term assembly
+Trace 2 in getfem_models.cc, line 3306: Source term: generic source term assembly
+[0. 0. 0. 0. 0. 0.]
+[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+ 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+[0. 0. 0. 0.]
+[0. 0. 0. 0. 0. 0.]
+[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+[0. 0. 0. 0.]
+[0. 0. 0. 0. 0. 0.]
+[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+[-3.19883409e-18  0.00000000e+00 -3.92119786e-18  0.00000000e+00
+  2.06377321e-17  0.00000000e+00]
+[ 2.60198775e-18 -4.77274454e-18  3.69821169e-19 -1.43182336e-17
+ -7.42952228e-18  4.77274454e-17 -3.30989137e-21 -1.11193788e-17
+ -7.26402772e-19  7.31139823e-17]
+[-1.91738590e-20 -6.83586578e-19 -5.75215770e-20 -2.28925632e-18
+  1.91738590e-19  7.31285895e-18 -3.25955603e-19 -3.77775127e-19
+  9.58692949e-19  6.66757862e-18 -1.89821204e-18 -1.45625178e-19
+  5.56041911e-18  1.30850076e-18 -1.03382244e-18 -4.85417259e-20
+  7.33008619e-18  4.85417259e-19]
+[-1.67075020e-20 -5.73672257e-19 -5.01225061e-20  1.49857339e-19
+  1.67075020e-19  1.99497435e-18 -2.84027535e-19  4.22720447e-19
+  8.35375102e-19 -1.43144446e-18 -1.54967036e-19  7.96282201e-20
+  1.09748643e-18 -1.25587167e-18  3.95972631e-20  3.10588434e-20
+  2.88424432e-19 -2.76717659e-19  1.86256827e-19  2.27657230e-19
+ -5.64635225e-19 -6.46790183e-19  3.19834955e-20  5.96652758e-20
+ -5.45600806e-19 -7.18306264e-19  5.64414627e-21  1.04806745e-19
+ -9.40691045e-20 -4.11180052e-19  1.88138209e-21 -2.20690051e-20
+ -1.88138209e-20 -1.21337470e-19]
