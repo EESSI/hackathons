@@ -15,7 +15,7 @@ Requirements:
 - installation of Singularity. Tested with version `3.8.4` and `3.8.5`
 - running git-bot to submit jobs to the cluster
 
-Note: During the testing we noticed some issues around `fuse-overlayfs` which are currently not fully understood. This might affect the build for the software stack but does not affect the build for EESSI. We are working on this (see this [PR# 232](https://github.com/containers/fuse-overlayfs/issues/232)
+Note: During the testing we noticed some issues around `fuse-overlayfs` which are currently not fully understood. This might affect the build for the software stack but does not affect the build for EESSI. We are working on this (see this [PR# 232](https://github.com/containers/fuse-overlayfs/issues/232))
 
 Usage:
 ------
