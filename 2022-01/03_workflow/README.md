@@ -33,3 +33,14 @@ Disclaimer:
 This is work in progress and not quite ready for production right now.
 
 Notes: https://hackmd.io/6V91CHRWRtuutANPaZRVPw
+
+# License
+
+The software in this repository is distributed under the terms of the
+[GNU General Public License v2.0](https://opensource.org/licenses/GPL-2.0).
+
+See [LICENSE](https://github.com/EESSI/software-layer/blob/main/LICENSE) for more information.
+
+SPDX-License-Identifier: GPL-2.0-only
+
+
