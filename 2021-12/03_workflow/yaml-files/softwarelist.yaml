@@ -2,7 +2,7 @@ software:
   bzip2:
     toolchains:
       SYSTEM:
-        versions: [1.0.6]
+        versions: [1.0.6, 1.0.8]
   zlib:
     toolchains:
       SYSTEM:
