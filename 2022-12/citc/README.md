@@ -3,7 +3,7 @@
 Created with [Cluster-in-the-Cloud (CitC)](https://cluster-in-the-cloud.readthedocs.io).
 
 Cluster ID: ``fair-mastodon``
-IP address: ``3.250.220.9``
+IP address: ``34.245.120.28``
 
 ### Access
 
@@ -12,7 +12,7 @@ Ask Kenneth (@boegel) to create you an account using your GitHub handle.
 Then log in with SSH:
 
 ```
-ssh -o IdentitiesOnly=yes -i ~/.ssh/id_ed25519_github_com boegel@3.250.220.9
+ssh -o IdentitiesOnly=yes -i ~/.ssh/id_ed25519_github_com boegel@34.245.120.28
 ```
 
 Or add something like this to your ``~/.ssh/config``:
@@ -20,7 +20,7 @@ Or add something like this to your ``~/.ssh/config``:
 ```
 Host citc-eessi-hackathon
   User boegel
-  HostName 3.250.220.9
+  HostName 34.245.120.28
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_ed25519_github_com
 ```
