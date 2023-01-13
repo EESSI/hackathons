@@ -1,0 +1,18 @@
+c4.2xlarge: 5  # Intel Haswell, 8 cores, 15GB RAM, EBS
+c5a.2xlarge: 5  # AMD EPYC (Rome/zen2), 8 cores, 16GB RAM, EBS
+c5a.8xlarge: 0  # AMD EPYC (Rome/zen2), 32 cores, 64GB RAM, EBS
+c5a.16xlarge: 0  # AMD EPYC (Rome/zen2), 64 cores, 128GB RAM, EBS
+c6a.2xlarge: 5  # AMD EPYC (Milan/zen3), 8 cores, 16GB RAM, EBS
+c5.2xlarge: 5  # Intel Xeon (Skylake or Cascade Lake), 8 cores, 16GB RAM, EBS
+c5d.2xlarge: 5  # Intel Xeon (Skylake or Cascade Lake), 8 cores, 16GB RAM, SSD
+c5.4xlarge: 0  # Intel Xeon (Skylake or Cascade Lake), 16 cores, 32GB RAM, EBS
+c6i.2xlarge: 1  # Intel Xeon 3rd gen (Ice Lake?), 8 cores, 16GB RAM, EBS
+c6g.2xlarge: 5  # Arm Graviton 2, 8 cores, 16GB RAM, EBS
+c6g.4xlarge: 0  # Arm Graviton 2, 16 cores, 32GB RAM, EBS
+c6g.8xlarge: 0  # Arm Graviton 2, 32 cores, 64GB RAM, EBS
+c6gd.2xlarge: 0  # Arm Graviton 2, 8 cores, 16GB RAM, SSD
+#c6gd.4xlarge: 1  # Arm Graviton 2, 16 cores, 32GB RAM, SSD
+#c6gd.8xlarge: 1  # Arm Graviton 2, 32 cores, 64GB RAM, SSD
+c7g.2xlarge: 5  # Arm Graviton 3, 8 cores, 16GB RAM, EBS
+c7g.4xlarge: 0  # Arm Graviton 3, 16 cores, 32GB RAM, EBS
+c7g.8xlarge: 0  # Arm Graviton 3, 32 cores, 64GB RAM, EBS
