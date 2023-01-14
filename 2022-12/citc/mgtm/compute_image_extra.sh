@@ -13,7 +13,7 @@
 #cd -
 
 sudo dnf config-manager --set-enabled powertools
-sudo dnf install -y epel-release vim python36 python36-pip Lmod which git gcc-c++ make patch file bzip2 unzip tar xz openssl openssl-devel rdma-core-devel glibc-static
+sudo dnf install -y epel-release vim python36 python3-pip Lmod which git gcc-c++ make patch file bzip2 unzip tar xz openssl openssl-devel rdma-core-devel glibc-static
 rpm -qa | grep environment-modules; if [[ $? -eq 0 ]]; then sudo dnf remove environment-modules; fi
 sudo dnf install -y apptainer
 sudo pip3 install archspec
